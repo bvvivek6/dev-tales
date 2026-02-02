@@ -6,9 +6,9 @@ const BlogCard = ({ post }) => {
   return (
     <Link
       to={`/blogs/${post.id}`}
-      className="group relative flex flex-col p-6 h-full rounded-4xl border border-white/10  hover:bg-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-500/5 overflow-hidden"
+      className="group relative flex flex-col p-6 h-full rounded-4xl border border-white/10  hover:bg-white/3 hover:border-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/5 overflow-hidden"
     >
-      <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-blue-500/0 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
+      <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-42 bg-gradient-to-br from-purple-500/40 to-blue-500/0 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
 
       <div className="relative z-10 flex flex-col h-full">
         <div className="flex items-center justify-between mb-4">

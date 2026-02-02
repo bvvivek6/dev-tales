@@ -15,7 +15,7 @@ const BlogListingPage = () => {
 
   return (
     <div className="space-y-12 max-w-6xl mx-auto">
-      <section className="space-y-6">
+      <section className="space-y-4">
         <h1 className="text-4xl font-bold tracking-tight">Blog</h1>
         <p className="text-lg text-gray-400 max-w-2xl">
           Thoughts, tutorials, and insights on software development, design
@@ -38,7 +38,7 @@ const BlogListingPage = () => {
 
       <section>
         {filteredPosts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredPosts.map((post) => (
               <BlogCard key={post.id} post={post} />
             ))}
