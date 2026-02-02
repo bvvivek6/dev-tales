@@ -8,12 +8,10 @@ import { ArrowRight } from "lucide-react";
 const LandingPage = () => {
   const recentPosts = posts.slice(0, 3);
   return (
-    <div className="space-y-20 dm-sans max-w-8xl mx-auto bg-black">
+    <div className="space-y-20 pb-12 dm-sans max-w-8xl mx-auto bg-black">
       <section className="relative h-[80vh] flex items-center  justify-start overflow-hidden ">
         <div className="absolute inset-0  pointer-events-none">
           <div className="bg-gradient-to-t from-black via-transparent h-30 w-full absolute bottom-0 z-10 to-transparent"></div>
-          {/* <div className="bg-gradient-to-r from-black via-transparent h-full w-20 absolute left-0 z-10 to-transparent"></div>
-          <div className="bg-gradient-to-l from-black via-transparent h-full w-20 absolute right-0 z-10 to-transparent"></div> */}
           <div className="bg-gradient-to-b from-black via-transparent h-10 w-full absolute top-0 z-10 to-transparent"></div>
           <ColorBends
             colors={["#ff5c7a", "#8a5cff", "#00ffd1"]}
@@ -30,7 +28,7 @@ const LandingPage = () => {
             color=""
           />
         </div>
-        <div className="relative z-10 flex flex-col justify-center items-start text-start space-y-6 px-6">
+        <div className="relative z-10 flex flex-col justify-center items-start text-start space-y-6 px-6 md:px-16">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 pb-2 drop-shadow-sm">
             Devtales
           </h1>
@@ -50,7 +48,7 @@ const LandingPage = () => {
       </section>
 
       <section className="max-w-6xl px-4 mx-auto">
-        <div className="flex justify-between  items-end mb-8 border-b border-gray-800 pb-4">
+        <div className="flex justify-between  items-end mb-8 pb-4">
           <h2 className="text-2xl font-bold text-white">Latest Stories</h2>
           <Link
             to="/blogs"
@@ -65,26 +63,6 @@ const LandingPage = () => {
             <BlogCard key={post.id} post={post} />
           ))}
         </div>
-      </section>
-      <section className="py-16 border-t px-4 border-gray-800 text-center">
-        <h3 className="text-2xl font-bold mb-4">Stay in the loop</h3>
-        <p className="text-gray-400 mb-6 max-w-md mx-auto">
-          Get the latest posts delivered right to your inbox. No spam, just
-          code.
-        </p>
-        <form
-          className="flex max-w-sm mx-auto gap-2"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <input
-            type="email"
-            placeholder="your@email.com"
-            className="flex-1 bg-black border border-gray-800 rounded-md px-4 py-2 text-sm focus:outline-none focus:border-white transition-colors text-white"
-          />
-          <button className="px-4 py-2 bg-white text-black rounded-md text-sm font-medium hover:bg-gray-200 transition-colors">
-            Subscribe
-          </button>
-        </form>
       </section>
     </div>
   );
