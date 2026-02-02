@@ -25,7 +25,7 @@ const BlogCard = ({ post }) => {
           {post.title}
         </h3>
 
-        <p className="text-[#818181] text-sm md:text-base font-light mb-6 line-clamp-3 flex-grow">
+        <p className="text-[#818181] text-sm  font-light mb-6 mt-2 line-clamp-3 flex-grow">
           {post.excerpt}
         </p>
 
