@@ -16,8 +16,8 @@ const BlogListingPage = () => {
   return (
     <div className="space-y-12 max-w-6xl mx-auto">
       <section className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight">Blog</h1>
-        <p className="text-lg text-gray-400 max-w-2xl">
+        <h1 className="text-4xl font-bold tracking-tight"># Blog</h1>
+        <p className="text-md leading-tight text-gray-400 max-w-2xl">
           Thoughts, tutorials, and insights on software development, design
           patterns, and industry trends.
         </p>

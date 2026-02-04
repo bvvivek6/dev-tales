@@ -9,12 +9,12 @@ const LandingPage = () => {
   const recentPosts = posts.slice(0, 3);
   return (
     <div className="space-y-20 pb-12 dm-sans max-w-8xl mx-auto bg-black">
-      <section className="relative h-[80vh] flex items-center  justify-start overflow-hidden ">
+      <section className="relative h-[90vh] flex items-center  justify-start overflow-hidden ">
         <div className="absolute inset-0  pointer-events-none">
-          <div className="bg-gradient-to-t from-black via-transparent h-30 w-full absolute bottom-0 z-10 to-transparent"></div>
-          <div className="bg-gradient-to-b from-black via-transparent h-10 w-full absolute top-0 z-10 to-transparent"></div>
+          <div className="bg-gradient-to-t from-black via-black/50 to-transparent h-60 w-full absolute bottom-0 z-10 to-transparent"></div>
+
           <ColorBends
-            colors={["#ff5c7a", "#8a5cff", "#00ffd1"]}
+            colors={["#0E3386", "#8a5cff", "#00ffd1"]}
             rotation={0}
             speed={0.2}
             scale={1}
@@ -29,10 +29,10 @@ const LandingPage = () => {
           />
         </div>
         <div className="relative z-10 flex flex-col justify-center items-start text-start space-y-6 px-6 md:px-16">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 pb-2 drop-shadow-sm">
-            Devtales
+          <h1 className="text-6xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 pb-2 drop-shadow-sm">
+            // Devtales
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl leading-tight drop-shadow-sm">
+          <p className="text-xl text-gray-300 w-[220px] md:w-[400px] leading-tight drop-shadow-sm">
             Curated stories for developers, designers, and tech enthusiasts.
             Exploring the intersection of code, design, and user experience.
           </p>
@@ -47,8 +47,8 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="max-w-6xl px-4 mx-auto">
-        <div className="flex justify-between  items-end mb-8 pb-4">
+      <section className="max-w-6xl px-8 md:px-4 mx-auto">
+        <div className="flex justify-between  items-end mb-6 pb-4">
           <h2 className="text-2xl font-bold text-white">Latest Stories</h2>
           <Link
             to="/blogs"

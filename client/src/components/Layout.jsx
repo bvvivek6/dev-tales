@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-black text-gray-100 dm-sans selection:bg-gray-800 selection:text-white">
-      <Header />
+      {isLandingPage ? null : <Header />}
       <motion.main
         className={`flex-grow w-full ${!isLandingPage ? "max-w-5xl mx-auto px-6 py-12" : ""}`}
         initial={{ opacity: 0 }}
