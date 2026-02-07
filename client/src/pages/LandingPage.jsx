@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { posts } from "../data/posts";
+import { getPosts } from "../services/postService";
 import BlogCard from "../components/BlogCard";
-import ColorBends from "../ColorBends"; // Importing from src root
+import ColorBends from "../ColorBends";
 import { ArrowRight } from "lucide-react";
 
 const LandingPage = () => {
-  const recentPosts = posts.slice(0, 3);
+  const [recentPosts, setRecentPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchRecent = async () => {
+      try {
+        const { data } = await getPosts({ limit: 3 });
+        setRecentPosts(data.posts);
+      } catch (error) {
+        console.error("Failed to fetch posts:", error);
+      }
+    };
+    fetchRecent();
+  }, []);
   return (
     <div className="space-y-20 pb-12 dm-sans max-w-8xl mx-auto bg-black">
       <section className="relative h-[90vh] flex items-center  justify-start overflow-hidden ">

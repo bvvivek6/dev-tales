@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Darker+Grotesque:wght@300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap");
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   --font-sans:
@@ -9,4 +10,75 @@
 
 body {
   font-family: var(--font-sans);
+}
+
+/* TipTap Editor Styles */
+.tiptap {
+  outline: none;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: #4b5563;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.tiptap img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  margin: 1rem auto;
+  display: block;
+}
+
+.tiptap pre {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.tiptap pre code {
+  color: #e5e7eb;
+  background: none;
+  font-size: 0.875rem;
+  font-family: ui-monospace, monospace;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid #374151;
+  padding-left: 1rem;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.tiptap hr {
+  border-color: #1f2937;
+  margin: 2rem 0;
+}
+
+.tiptap a {
+  color: #60a5fa;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tiptap a:hover {
+  color: #93bbfc;
+}
+
+.tiptap ul,
+.tiptap ol {
+  padding-left: 1.5rem;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
 }

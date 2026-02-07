@@ -3,9 +3,18 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Calendar } from "lucide-react";
 
 const BlogCard = ({ post }) => {
+  const dateStr =
+    post.date ||
+    new Date(post.createdAt).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  const slug = post.slug || post.id;
+
   return (
     <Link
-      to={`/blogs/${post.id}`}
+      to={`/blogs/${slug}`}
       className="group relative flex flex-col p-6 h-[300px] hover:bg-white/3 hover:border-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/5 overflow-hidden"
     >
       <div className="absolute bottom-0 left-0 -mr-6 -mb-4 w-48 h-52 bg-gradient-to-br from-blue-700  to-[#00ffd1]/60  blur-xl group-hover:scale-140 transition-transform duration-500" />
@@ -17,7 +26,7 @@ const BlogCard = ({ post }) => {
           </span>
           <span className="flex items-center text-xs text-white/70 font-mono">
             <Calendar size={12} className="mr-1.5" />
-            {post.date}
+            {dateStr}
           </span>
         </div>
 
