@@ -11,7 +11,14 @@ const router = express.Router();
 // Ensure uploads directory exists
 const uploadsDir = path.join(__dirname, "..", "uploads");
 if (!fs.existsSync(uploadsDir)) {
-  fs.mkdirSync(uploadsDir, { recursive: true });
+  try {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+  } catch (err) {
+    console.log(
+      "Could not create uploads directory (likely read-only filesystem):",
+      err.message,
+    );
+  }
 }
 
 // Configure multer storage

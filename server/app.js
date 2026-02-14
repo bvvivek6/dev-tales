@@ -42,8 +42,15 @@ app.get("/api/health", (req, res) => {
 });
 
 // Connect to DB and start server
-connectDB().then(() => {
-  app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+if (!process.env.VERCEL) {
+  connectDB().then(() => {
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
   });
-});
+} else {
+  // For Vercel, just connect to DB (connection will be reused/buffered)
+  connectDB();
+}
+
+export default app;
