@@ -8,6 +8,8 @@ import postRoutes from "./routes/posts.js";
 import adminRoutes from "./routes/admin.js";
 import commentRoutes from "./routes/comments.js";
 import uploadRoutes from "./routes/upload.js";
+import authRoutes from "./routes/auth.js";
+import { protect, admin } from "./middleware/authMiddleware.js";
 
 dotenv.config();
 
@@ -29,9 +31,10 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/posts", postRoutes);
 app.use("/api/posts", commentRoutes);
 app.use("/api/upload", uploadRoutes);
+app.use("/api/auth", authRoutes);
 
-// Admin API routes (no auth for now, URL-based access)
-app.use("/api/admin", adminRoutes);
+// Admin API routes
+app.use("/api/admin", protect, admin, adminRoutes);
 
 // Health check
 app.get("/api/health", (req, res) => {
