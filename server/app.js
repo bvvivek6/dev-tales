@@ -36,11 +36,6 @@ app.use("/api/auth", authRoutes);
 // Admin API routes
 app.use("/api/admin", protect, admin, adminRoutes);
 
-// Health check
-app.get("/api/health", (req, res) => {
-  res.json({ status: "ok", timestamp: new Date().toISOString() });
-});
-
 // Connect to DB and start server
 if (!process.env.VERCEL) {
   connectDB().then(() => {
@@ -49,7 +44,6 @@ if (!process.env.VERCEL) {
     });
   });
 } else {
-  // For Vercel, just connect to DB (connection will be reused/buffered)
   connectDB();
 }
 
